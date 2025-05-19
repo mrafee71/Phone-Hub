@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneHub - Premium Mobile Shop</title>
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- AOS - Animate On Scroll Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white py-4 px-6 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="bi bi-phone text-blue-600 text-3xl"></i>
+                <span class="text-2xl font-bold text-gray-800">PhoneHub</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#products" class="text-gray-600 hover:text-blue-600 transition-colors">Products</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition-colors">Reviews</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="text-gray-600 hover:text-blue-600">
+                    <i class="bi bi-search text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-blue-600 relative">
+                    <i class="bi bi-cart text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate__animated animate__heartBeat animate__infinite">3</span>
+                </button>
+                <button class="text-gray-600 hover:text-blue-600">
+                    <i class="bi bi-person text-xl"></i>
+                </button>
+                <button class="md:hidden text-gray-600 hover:text-blue-600" id="mobile-menu-button">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden absolute left-0 right-0 bg-white p-4 shadow-md" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#products" class="text-gray-600 hover:text-blue-600 transition-colors">Products</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition-colors">Reviews</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-32 px-6 relative">
+        <div class="container mx-auto md:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInUp">Unlock the Future of Mobile Technology</h1>
+                <p class="text-xl md:text-2xl mb-8 animate__animated animate__fadeInUp animate__delay-1s">Discover the latest smartphones and accessories with exclusive offers.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full font-semibold transition-all flex items-center justify-center space-x-2 glow-animation">
+                        <span>Shop Now</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                    <button class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 text-white py-3 px-8 rounded-full font-semibold transition-all flex items-center justify-center space-x-2">
+                        <i class="bi bi-play-circle"></i>
+                        <span>Watch Video</span>
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="./images/latest-smart-phone.png" alt="Latest Smartphone" class="h-64 md:h-96 float-animation animate__animated animate__fadeIn animate__delay-1s">
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 left-10 animate__animated animate__fadeIn animate__delay-2s hidden md:block">
+            <i class="bi bi-lightning-charge text-yellow-400 text-4xl animate__animated animate__flash animate__infinite animate__slow"></i>
+        </div>
+        <div class="absolute bottom-1/4 right-10 animate__animated animate__fadeIn animate__delay-2s hidden md:block">
+            <i class="bi bi-stars text-purple-400 text-4xl animate__animated animate__fadeIn animate__infinite animate__slow"></i>
+        </div>
+    </section>
+    
+    <!-- Brands Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto md:px-8 px-6">
+            <h2 class="text-2xl font-semibold text-center text-gray-800 mb-12">Trusted by Leading Brands</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16" data-aos="fade-up">
+                <div class="brand-logo">
+                    <i class="bi bi-apple text-6xl text-gray-500"></i>
+                </div>
+                <div class="brand-logo">
+                    <i class="bi bi-android2 text-6xl text-gray-500"></i>
+                </div>
+                <div class="brand-logo">
+                    <span class="text-5xl text-gray-500 font-bold">SAMSUNG</span>
+                </div>
+                <div class="brand-logo">
+                    <span class="text-5xl text-gray-500 font-bold">SONY</span>
+                </div>
+                <div class="brand-logo">
+                    <span class="text-5xl text-gray-500 font-bold">XIAOMI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Discount Banner -->
+    <section class="discount-banner py-8 px-6 text-white text-center">
+        <div class="container mx-auto md:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl md:text-4xl font-bold animate__animated animate__pulse animate__infinite animate__slow">FLASH SALE! 30% OFF</h3>
+                    <p class="text-lg">Limited time offer on premium devices</p>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="bg-white text-red-500 p-3 rounded-lg w-16 text-center">
+                        <span class="block text-xl font-bold">02</span>
+                        <span class="text-sm">Days</span>
+                    </div>
+                    <div class="bg-white text-red-500 p-3 rounded-lg w-16 text-center">
+                        <span class="block text-xl font-bold">18</span>
+                        <span class="text-sm">Hours</span>
+                    </div>
+                    <div class="bg-white text-red-500 p-3 rounded-lg w-16 text-center">
+                        <span class="block text-xl font-bold">45</span>
+                        <span class="text-sm">Mins</span>
+                    </div>
+                    <div class="bg-white text-red-500 p-3 rounded-lg w-16 text-center">
+                        <span class="block text-xl font-bold">22</span>
+                        <span class="text-sm">Secs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section id="products" class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-aos="fade-up">Featured Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Explore our collection of the latest smartphones and accessories from top brands.</p>
+            </div>
+            
+            <div class="flex justify-center mb-10" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-wrap bg-white rounded-full p-2 shadow-md">
+                    <button class="py-2 px-6 rounded-full bg-blue-600 text-white font-medium">All Products</button>
+                    <button class="py-2 px-6 rounded-full text-gray-600 hover:text-blue-600 font-medium transition-colors">Smartphones</button>
+                    <button class="py-2 px-6 rounded-full text-gray-600 hover:text-blue-600 font-medium transition-colors">Accessories</button>
+                    <button class="py-2 px-6 rounded-full text-gray-600 hover:text-blue-600 font-medium transition-colors">Wearables</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">-15%</span>
+                        <img src="./images/Apple-iPhone-14-Pro.jpg" alt="Smartphone" class="w-full h-64 object-cover">
+                        <button class="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-blue-600 font-medium">Smartphones</span>
+                            <div class="flex">
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-half text-yellow-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">iPhone 14 Pro Max</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-blue-600">$999</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">$1,149</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                                <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                        <img src="./images/samsung-galaxy-s24.jpg" alt="Smartphone" class="w-full h-64 object-cover">
+                        <button class="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-blue-600 font-medium">Smartphones</span>
+                            <div class="flex">
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Samsung Galaxy S24</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-blue-600">$899</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                                <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="./images/google-pixel-8.jpg" alt="Smartphone" class="w-full h-64 object-cover">
+                        <button class="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-blue-600 font-medium">Smartphones</span>
+                            <div class="flex">
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Google Pixel 8</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-blue-600">$799</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                                <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">-20%</span>
+                        <img src="./images/airpods-pro-2.jpg" alt="Smartphone" class="w-full h-64 object-cover">
+                        <button class="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-blue-600 font-medium">Accessories</span>
+                            <div class="flex">
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-fill text-yellow-400"></i>
+                                <i class="bi bi-star-half text-yellow-400"></i>
+                                <i class="bi bi-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">AirPods Pro 2</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-blue-600">$199</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">$249</span>
+                            </div>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                                <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-3 px-8 rounded-full font-semibold transition-colors inline-flex items-center" data-aos="fade-up">
+                    <span>View All Products</span>
+                    <i class="bi bi-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 bg-white">
+        <div class="container mx-auto md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-aos="fade-up">Why Choose Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">We provide the best mobile shopping experience with top-notch customer service and exclusive benefits.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-6">
+                        <i class="bi bi-truck text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Free Shipping</h3>
+                    <p class="text-gray-600">Enjoy free shipping on all orders above $50. Fast delivery right to your doorstep.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-600 mb-6">
+                        <i class="bi bi-shield-check text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Product Warranty</h3>
+                    <p class="text-gray-600">All our products come with a minimum of 12 months warranty for your peace of mind.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 text-purple-600 mb-6">
+                        <i class="bi bi-headset text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Our customer support team is available round the clock to assist you with any queries.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-red-100 text-red-600 mb-6">
+                        <i class="bi bi-arrow-counterclockwise text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Easy Returns</h3>
+                    <p class="text-gray-600">Not satisfied with your purchase? Return within 30 days for a full refund.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-yellow-100 text-yellow-600 mb-6">
+                        <i class="bi bi-credit-card text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Secure Payment</h3>
+                    <p class="text-gray-600">Multiple secure payment options for safe and hassle-free transactions.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6">
+                        <i class="bi bi-trophy text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Premium Quality</h3>
+                    <p class="text-gray-600">We offer only authentic products from authorized distributors and manufacturers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-16 px-6 bg-blue-600 text-white">
+        <div class="container mx-auto md:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Mobile Experience?</h2>
+                    <p class="text-lg text-blue-100">Join thousands of satisfied customers who have chosen PhoneHub for their mobile needs.</p>
+                </div>
+                <div data-aos="fade-up">
+                    <button class="bg-white text-blue-600 hover:bg-blue-100 py-3 px-8 rounded-full font-semibold transition-colors inline-flex items-center space-x-2">
+                        <span>Shop Now</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-aos="fade-up">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Hear from our satisfied customers about their shopping experience with PhoneHub.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex mb-4">
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The delivery was super fast and the phone was exactly as described. Great customer service too when I had questions about my order. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <img src="/api/placeholder/50/50" alt="Customer" class="h-12 w-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">iPhone 14 Pro Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex mb-4">
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-half text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I was skeptical about buying a phone online, but PhoneHub exceeded my expectations. The price was better than in physical stores and the warranty service is excellent."</p>
+                    <div class="flex items-center">
+                        <img src="/api/placeholder/50/50" alt="Customer" class="h-12 w-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Samsung Galaxy Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex mb-4">
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                        <i class="bi bi-star-fill text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The trade-in program is the best I've experienced. Got a great value for my old phone and the new one arrived the next day. The whole process was smooth and hassle-free."</p>
+                    <div class="flex items-center">
+                        <img src="/api/placeholder/50/50" alt="Customer" class="h-12 w-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Emily Chen</h4>
+                            <p class="text-gray-500 text-sm">Google Pixel Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center font-medium" data-aos="fade-up">
+                    <span>View More Reviews</span>
+                    <i class="bi bi-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="py-16 px-6 bg-blue-100">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Subscribe to Our Newsletter</h2>
+                <p class="text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="100">Stay updated with the latest products, exclusive offers, and tech news.</p>
+                <form class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <input type="email" placeholder="Enter your email address" class="flex-grow px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-colors sm:flex-shrink-0">
+                        Subscribe Now
+                    </button>
+                </form>
+                <p class="text-sm text-gray-500 mt-4" data-aos="fade-up" data-aos-delay="300">By subscribing, you agree to our Privacy Policy and Terms of Service.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mobile App Section -->
+    <section class="py-16 px-6 bg-white">
+        <div class="container mx-auto md:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 order-2 md:order-1" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Download Our Mobile App</h2>
+                    <p class="text-gray-600 mb-8">Get exclusive app-only deals, easy order tracking, and faster checkout with our mobile app. Available for iOS and Android devices.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-black text-white py-3 px-6 rounded-xl flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i class="bi bi-apple text-3xl mr-2"></i>
+                            <div class="text-left">
+                                <span class="block text-xs">Download on the</span>
+                                <span class="block text-lg font-semibold">App Store</span>
+                            </div>
+                        </button>
+                        <button class="bg-black text-white py-3 px-6 rounded-xl flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i class="bi bi-google-play text-3xl mr-2"></i>
+                            <div class="text-left">
+                                <span class="block text-xs">Get it on</span>
+                                <span class="block text-lg font-semibold">Google Play</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center order-1 md:order-2" data-aos="fade-up">
+                    <img src="./images/mobile-app.png" alt="Mobile App" class="h-64 md:h-96 float-animation">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto md:px-8">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/3 mb-12 lg:mb-0" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Have questions or need assistance? Contact our friendly customer support team.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="bi bi-geo-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Our Location</h3>
+                                <p class="text-gray-600">123 Tech Street, Digital City, DC 10110</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="bi bi-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Email Us</h3>
+                                <p class="text-gray-600">support@phonehub.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="bi bi-telephone text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Call Us</h3>
+                                <p class="text-gray-600">+1 (123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="bi bi-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Working Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 9AM - 8PM<br>Saturday - Sunday: 10AM - 6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3 lg:pl-16" data-aos="fade-up">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                                    <input type="text" id="name" placeholder="John Doe" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                                    <input type="email" id="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" placeholder="How can we help you?" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                                <textarea id="message" rows="5" placeholder="Write your message here..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg font-semibold transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="bi bi-phone text-blue-400 text-3xl"></i>
+                        <span class="text-2xl font-bold">PhoneHub</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Your one-stop destination for all things mobile. Quality products, unbeatable prices, and exceptional service.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition-colors">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-600 transition-colors">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-800 transition-colors">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Shop</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Customer Service</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">My Account</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Order Tracking</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Wishlist</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Download App</h3>
+                    <p class="text-gray-400 mb-6">Get access to exclusive offers!</p>
+                    <div class="flex flex-col space-y-4">
+                        <a href="#" class="bg-gray-800 text-white py-2 px-4 rounded-lg flex items-center hover:bg-gray-700 transition-colors">
+                            <i class="bi bi-apple text-2xl mr-2"></i>
+                            <div class="text-left">
+                                <span class="block text-xs">Download on the</span>
+                                <span class="block text-sm font-semibold">App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-gray-800 text-white py-2 px-4 rounded-lg flex items-center hover:bg-gray-700 transition-colors">
+                            <i class="bi bi-google-play text-2xl mr-2"></i>
+                            <div class="text-left">
+                                <span class="block text-xs">Get it on</span>
+                                <span class="block text-sm font-semibold">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 mb-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 PhoneHub. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Shipping Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Refund Policy</a>
+                </div>
+                <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                    <img src="./images/visa.png" alt="Visa" class="h-6">
+                    <img src="./images/card.png" alt="Mastercard" class="h-6">
+                    <img src="./images/pp.png" alt="PayPal" class="h-6">
+                    <img src="./images/apple-pay.png" alt="Apple Pay" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition-colors">
+        <i class="bi bi-arrow-up text-xl"></i>
+    </button>
+    
+    <!-- AOS - Animate On Scroll Library JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endTime = new Date(now);
+            endTime.setDate(endTime.getDate() + 2);
+            endTime.setHours(18, 45, 22);
+            
+            const diff = endTime - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.querySelector('.discount-banner .bg-white:nth-child(1) .block').textContent = days.toString().padStart(2, '0');
+            document.querySelector('.discount-banner .bg-white:nth-child(2) .block').textContent = hours.toString().padStart(2, '0');
+            document.querySelector('.discount-banner .bg-white:nth-child(3) .block').textContent = minutes.toString().padStart(2, '0');
+            document.querySelector('.discount-banner .bg-white:nth-child(4) .block').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initial countdown update
+        updateCountdown();
+        
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+        
+        // Add to cart animation
+        const addToCartButtons = document.querySelectorAll('.product-card button');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.innerHTML = '<i class="bi bi-check"></i>';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="bi bi-cart-plus"></i>';
+                }, 1500);
+                
+                const cartCount = document.querySelector('.bi-cart + span');
+                cartCount.textContent = parseInt(cartCount.textContent) + 1;
+                
+                cartCount.classList.add('animate__animated', 'animate__rubberBand');
+                setTimeout(() => {
+                    cartCount.classList.remove('animate__animated', 'animate__rubberBand');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
